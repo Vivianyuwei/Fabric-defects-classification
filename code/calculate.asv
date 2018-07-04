@@ -1,0 +1,34 @@
+function right_percent=calculate(class_index)
+every_test_number=10;
+test_number=110;
+right=0;
+error=[];
+value=[];
+for index=1:test_number
+   if class_index(index)==ceil(index/every_test_number)
+       right=right+1;
+   else
+       index
+       error=[error,class_index(index)];
+       value=[value,ceil(index/every_test_number)];
+   end
+end
+error
+value
+right_percent=right/test_number
+% train_name={'train1.txt','train2.txt','train3.txt','train4.txt'};
+% test_name={'test1.txt','test2.txt','test3.txt','test4.txt'};
+% train_number=[3399,3226,3282,3281];
+% test_number=[997,1170,1114,1115];
+% train_name=ReadOutexTxt(['G:\图片数据库\KTH-TIPS2\601895\KTH-TIPS2\kth-tips2-a_col_200x200\KTH-TIPS2-a\txt\',train_name{i}],train_number(i));
+% test_name=ReadOutexTxt(['G:\图片数据库\KTH-TIPS2\601895\KTH-TIPS2\kth-tips2-a_col_200x200\KTH-TIPS2-a\txt\',test_name{i}],test_number(i));
+% right=0;
+% for index=1:test_number(i)
+%    if strcmp(test_name{index}(1:2),train_name{class_index(index)}(1:2))
+%        right=right+1;
+%    end
+% end
+% 
+% right_percent=right/test_number(i);
+
+end

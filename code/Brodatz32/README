@@ -1,0 +1,79 @@
+Description:
+Image data for texture classification involving 32 textures from the Brodatz
+album.
+
+Original reference for the image data:
+[0] Valkealahti K & Oja E (1998). Reduced multidimensional cooccurrence
+histograms in texture classification. IEEE Transactions on Pattern Analysis
+and Machine Intelligence 20:90-94.
+
+Our publications where this image data has been used:
+[1] Ojala T, Pietikäinen M & Kyllönen J (1999) Gray level cooccurrence
+histograms via learning vector quantization. Proc. 11th Scandinavian
+Conference on Image Analysis, Kangerlussuaq, Greenland, 103-108.
+
+[2] Ojala T, Valkealahti K, Oja E & Pietikäinen M (2000) Texture
+discrimination with multidimensional distributions of signed differences.
+Proc. of 4th Asian Conference on Computer Vision, Taipei, Taiwan, in press.
+
+[3] Ojala T, Valkealahti K, Oja E & Pietikäinen M (2000) Texture
+discrimination with multidimensional distributions of signed differences.
+Pattern Recognition, accepted.
+
+
+Other publications where this image data has been used:
+
+
+Acknowledgements:
+We wish to thank Dr. Kimmo Valkealahti from Nokia Research Center and
+Professor Erkki Oja from Helsinki University of Technology for providing
+these images.
+
+
+Detailed information:
+Type of problem:		texture classification
+Number of texture classes:	32 textures from the Brodatz album
+Number of images (samples):	64 images per class (hence 2048 images in
+				total), which comprise following subsets
+				of images:
+				16 'original' images
+				16 rotated versions of the 'original' images
+				16 scaled versions of the 'original' images
+				16 rotated and scaled versions of the
+				   'original' images
+Image size:			64x64 pixels
+Image format:			xv (Khoros Visualization image file)
+Pixel format:			8 bit monochrome
+Preprocessing:			histogram equalization; each 64x64 sample has
+				uniform gray level histogram
+
+
+Contents of the zip file:
+
+README				This file.
+
+<texture>_<idx>_<type>.xv	An image named as follows:
+
+		<texture>	texture class (bark, beachsand, beans, burlap,
+				d10, d11, d4, d51, d52, d5, d6, d95,
+				fieldstone, grass, ice, image09, image15,
+				image17, image19, paper, peb54, pigskin,
+				pressedcl, raffia2, raffia, reptile, ricepaper,
+				seafan, straw2, tree, water, woodgrain)
+
+		<idx>		running index (0-15) corresponding to the 16
+				'original' images
+
+		<type>		o	original
+				r 	rotated
+				s	scaled
+				rs	rotated and scaled
+
+ho10_<trial>_train.txt		In references [1-3] image data was randomly
+ho10_<trial>_test.txt		divided into ten training and testing sets of
+				1024 images each. These files contain the
+				names of the images used for training and
+				testing in trial <trial> (0-9), respectively.
+
+
+

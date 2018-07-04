@@ -1,0 +1,48 @@
+
+% function [filenames, classIDs] = ReadOutexTxt(txtfile)
+% % Version 1.0
+% % Authors: Zhenhua Guo, Lei Zhang and David Zhang
+% % Copyright @ Biometrics Research Centre, the Hong Kong Polytechnic University
+% 
+% fid = fopen(txtfile,'r');
+% tline = fgetl(fid); % get the number of image samples
+% i = 0;
+% while 1
+%     tline = fgetl(fid);
+%     if ~ischar(tline)
+%         break;
+%     end
+%     index = findstr(tline,'.');
+%     i = i+1;
+%     filenames(i) = str2num(tline(1:index-1))+1; % the picture ID starts from 0, but the index of Matlab array starts from 1
+%     classIDs(i) = str2num(tline(index+5:end)); 
+% end
+% fclose(fid);
+
+ function  filenames= ReadTxt(txtfile)
+ fid=fopen(txtfile,'r');
+ filenames=cell(1,image_number);
+ i=0;
+ while 1
+     tline=fgetl(fid);
+     if ~ischar(tline)
+         break;
+     end
+     i=i+1;
+     filenames(1,i)={fgetl(fid)};
+     
+ for index=1:image_number
+     %读取brodatz数据库
+     filenames(1,index)={fgetl(fid)}; 
+%      %读取outex数据库
+%      data=fgetl(fid);
+%      filenames(1,index)={data(1:10)}; 
+
+%      %读取KTH-TIPS2_a数据库
+%      filenames(1,index)={fgetl(fid)}; 
+ end 
+ fclose(fid);
+ end
+ 
+ 
+ 
